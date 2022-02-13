@@ -1,4 +1,27 @@
+function totalPrice(){
+    const casePriceText = document.getElementById('case-price').innerText;
+    const casePrice = parseFloat (casePriceText);
+    const mobilePriceText = document.getElementById('mobile-price').innerText;
+    const mobilePrice = parseFloat (mobilePriceText);
 
+    // sub total price update means mobile and case ta update 
+    const subTotalPrice = casePrice + mobilePrice;
+    const subTotalText = document.getElementById('sub-total'); 
+    subTotalText.innerText = subTotalPrice;
+    
+    
+    // tax section total ta update and tax rate 10%
+    const tax = subTotalPrice /10;
+    const taxText = document.getElementById('tax');
+    taxText.innerText = tax;
+
+
+    // total price update 
+    const totalText= document.getElementById('total');
+    totalText.innerText = subTotalPrice + tax;
+
+
+}
 
 function productPrice(product, productNumber, price){
     const productPriceText = document.getElementById(product +'-price');
